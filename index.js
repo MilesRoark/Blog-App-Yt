@@ -22,7 +22,7 @@ app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 //Connect to MongoDb
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
       useNewUriParser: true,
       useUnifiedTopology: true,
     });
