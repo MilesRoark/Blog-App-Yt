@@ -241,9 +241,8 @@ async function registerUser(event, baseUrl) {
   const password = passwordInput.value;
   const role = roleInput.value;
 
-  // Ensure that inputs are not empty
   if (!username || !password || !role) {
-    alert("Please fill in all fields 3.");
+    alert("Please fill in all fields.");
     return;
   }
 
@@ -252,25 +251,30 @@ async function registerUser(event, baseUrl) {
   try {
     const res = await fetch(`${baseUrl}/register`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
     });
 
-    // Check if response is empty or not valid JSON
+    // Attempt to parse JSON response
     let data;
     try {
       data = await res.json();
     } catch (error) {
       console.error("Failed to parse JSON response:", error);
-      alert("Unexpected response from the server.");
-      return;
+
+      // Handle cases where the server does not return a body
+      if (res.status === 201) {
+        alert("Registration successful!");
+        return;
+      } else {
+        alert(`Unexpected server response: ${res.status}`);
+        return;
+      }
     }
 
+    // Check the success flag in the JSON response
     if (data.success) {
       alert("Registered successfully!");
-      // Clear input fields
       usernameInput.value = "";
       passwordInput.value = "";
       roleInput.value = "";
