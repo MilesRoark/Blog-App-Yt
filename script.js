@@ -377,5 +377,3 @@ document.addEventListener("DOMContentLoaded", () => {
     logoutDiv.style.display = "none";
   }
 });
-
-console.log("Calling API:", `${baseUrl}/register`);
