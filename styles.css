@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "cinzel", sans-serif;
+  font-family: "Cinzel", serif;
 }
 
 .nav {
@@ -14,7 +14,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: white;
+  background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .nav__menu li:hover {
-  background-color: rgba(250, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .nav__hamburger {
@@ -65,7 +65,7 @@ body {
   gap: 12px;
 }
 
-/* Media Queries */
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 5050px) {
   .nav__hamburger {
@@ -95,15 +95,17 @@ body {
   .nav__hamburger.active :nth-child(1) {
     transform: rotate(45deg) translate(7px, 3px);
   }
+
   .nav__hamburger.active :nth-child(2) {
     opacity: 0;
   }
+
   .nav__hamburger.active :nth-child(3) {
     transform: rotate(-45deg) translate(7px, -3px);
   }
 }
 
-/* Main Section */
+/* MAIN */
 
 .logout-div {
   display: none;
@@ -134,7 +136,7 @@ input {
 
 button {
   background-color: #4285f4;
-  color: white;
+  color: #fff;
   transition: 0.2s;
   transition-delay: 0.2s;
 }
@@ -151,7 +153,7 @@ select:hover,
   cursor: pointer;
 }
 
-/* Post List */
+/* POST LIST */
 
 main {
   text-align: center;
@@ -169,7 +171,7 @@ main {
 
 #posts-list img,
 .detail-post-img {
-  width: 60%;
+  width: 90%;
   max-width: 450px;
   height: auto;
   object-fit: cover;
@@ -230,7 +232,7 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* New Post Section */
+/* NEW POST */
 
 #admin-buttons,
 #update-form {
@@ -257,7 +259,7 @@ textarea {
   height: 200px;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer {
   display: flex;
