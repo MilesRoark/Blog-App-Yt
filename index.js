@@ -230,7 +230,7 @@ app.put("/posts/:id", authenticateJWT, async (req, res) => {
     if (req.user.role === "admin") {
       post.title = title;
       post.content = content;
-      await post.save();
+      await Post.save();
       res.status(200).send(post);
     } else {
       res.status(403).send({ error: "Forbidden" });
